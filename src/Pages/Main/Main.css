@@ -1,0 +1,45 @@
+/* Main container */
+
+.main-container {
+    padding: 80px 30px 20px;
+    
+    --title-fontSize: 40px;
+}
+
+.main-container * {
+    box-sizing: border-box;
+}
+
+/*  All Sections */
+
+.section {
+    width: 100%;
+    padding: calc(var(--title-fontSize) + 10px) 20px 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 70px;
+}
+
+.section-title {
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 450;
+    font-style: normal;
+    font-size: var(--title-fontSize);
+    
+    margin: 0px;
+    padding: 0px 5px 0px;
+    position: absolute;
+    top: calc(0px - 4px - var(--title-fontSize) / 2);
+    left: 25px;
+    background-color: #eeeeee;
+    width: fit-content;
+}
+
+/* Profile Section */
+
+.delete-profile-btn::before {
+    background-color: red;
+}
+

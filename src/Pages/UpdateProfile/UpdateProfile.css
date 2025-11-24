@@ -1,0 +1,39 @@
+.update-profile-container {
+    margin: 25px;
+    padding: 25px;
+    width: 80%;
+    min-width: 500px;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.367);
+    border-radius: 8px;
+
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 1.6em;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    text-align: center;
+    color: black;
+}
+
+.form-group {
+    text-align: left;
+    margin: auto;
+    margin: 15px 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.update-profile-container input {
+    width: 350px;
+    height: 22px;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 2px;
+
+    background-color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 0.7em;
+}
