@@ -1,0 +1,43 @@
+.schedule-meeting-container {
+    margin: auto;
+    width: 800px;
+    font-size: 1.3em;
+    text-align: center;
+    color: black;
+    padding-top: 25px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.schedule-meeting-container input {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 0.7em;
+}
+
+.schedule-meeting-container input[type="text"] {
+    width: 350px;
+    height: 22px;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 2px;
+}
+
+.schedule-meeting-container input[type="date"], .schedule-meeting-container input[type="time"]  {
+    width: 140px;
+    height: 22px;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 2px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 0.7em;
+}
+
+.schedule-meeting-container label {
+    width: fit-content;
+}

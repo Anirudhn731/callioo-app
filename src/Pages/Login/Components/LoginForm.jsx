@@ -9,7 +9,7 @@ function LoginForm({ socketRef }) {
         e.preventDefault();
 
         console.log("Logging in...");
-        const res = await fetch("http://localhost:9000/api/login", {
+        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}api/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(loginreq)
@@ -18,6 +18,7 @@ function LoginForm({ socketRef }) {
         const data = await res.json();
         if (data.status === "true") {
             localStorage.setItem("jwt", data.token);
+            localStorage.setItem("name", data.name);
             connectSocket(data.token);
         }
         else {
@@ -26,7 +27,9 @@ function LoginForm({ socketRef }) {
     }
 
     function connectSocket(token) {
-        const socket = new WebSocket(`ws://localhost:9000/ws?token=${token}`);
+        let wsurl = `${import.meta.env.VITE_BACKEND_URL}`;
+        wsurl.replace("https", "ws");
+        const socket = new WebSocket(`${wsurl}ws?token=${token}`);
         socketRef.current = socket;
 
         socket.onopen = () => {

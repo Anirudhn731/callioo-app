@@ -1,5 +1,4 @@
 {
-  "homepage": "https://Anirudhn731.github.io/callioo-app",
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
@@ -8,14 +7,17 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "preview": "vite preview"
   },
   "dependencies": {
+    "@jitsi/react-sdk": "^1.4.4",
+    "jwt-decode": "^4.0.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-router": "^7.9.6"
+    "react-router": "^7.9.6",
+    "react-router-dom": "^7.9.6",
+    "uuid": "^13.0.0",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

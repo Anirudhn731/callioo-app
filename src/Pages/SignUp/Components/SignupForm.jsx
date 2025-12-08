@@ -18,20 +18,21 @@ function SignUpForm({ setIsSelectedSignUp }) {
             if (newUser.email != "") {
                 if (newUser.password != "") {
                     if (newUser.password == confirmPass) {
-                        fetch("http://localhost:9000/api/register", {
+                        fetch(`${import.meta.env.VITE_BACKEND_URL}api/register`, {
                             method: "POST",
                             headers: {
                                 'Content-Type': 'application/json',
                             },
                             body: JSON.stringify(newUser)
-                        }).then((response) => {
-                            if (response === true)
-                                alert("Successfully registered new user!");
-                            else {
-                                alert("User with this email already exists!");
-                            }
-                            navigate("/");
-                        });
+                        }).then((response) => (response.json()))
+                            .then((data) => {
+                                if (data === true)
+                                    alert("Successfully registered new user!");
+                                else {
+                                    alert("User with this email already exists!");
+                                }
+                                navigate("/");
+                            });
                     }
                     else alert("The passwords are not matching! Re-enter password to confirm!")
                 }

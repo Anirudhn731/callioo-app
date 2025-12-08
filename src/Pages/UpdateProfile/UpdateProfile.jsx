@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 
 function UpdateProfile({ socketRef, logout }) {
     if (localStorage.getItem("jwt") == null || localStorage.getItem("jwt") == "") {
+        localStorage.clear();
         return (
             <>
                 <h1>There was a problem retrieving this page</h1>
@@ -22,7 +23,7 @@ function UpdateProfile({ socketRef, logout }) {
         async function updateData() {
             const email = localStorage.getItem("email");
             if (email != null && email != "") {
-                const res = await fetch("http://localhost:9000/api/getUser?email=" + email);
+                const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}api/getUser?email=` + email);
                 if (res != null) {
                     const data = await res.json();
                     setProfile((prev) => ({ ...prev, "email": email }));
@@ -45,7 +46,7 @@ function UpdateProfile({ socketRef, logout }) {
 
         if (profile.fullName != "") {
             if (profile.password == confirmPass) {
-                fetch("http://localhost:9000/api/updateUser", {
+                fetch(`${import.meta.env.VITE_BACKEND_URL}api/updateUser`, {
                     method: "PUT",
                     headers: {
                         'Content-Type': 'application/json',

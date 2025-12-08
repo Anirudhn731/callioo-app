@@ -4,7 +4,7 @@ function ProfileSection({ socketRef, logout }) {
     const navigate = useNavigate();
 
     function deleteAccount() {
-        fetch("http://localhost:9000/api/deleteUser?email=" + localStorage.getItem("email"),
+        fetch(`${import.meta.env.VITE_BACKEND_URL}api/deleteUser?email=` + localStorage.getItem("email"),
             {
                 method: "DELETE",
             })

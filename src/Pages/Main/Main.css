@@ -19,6 +19,7 @@
     border-radius: 20px;
     position: relative;
     margin-bottom: 70px;
+    min-width: 1280px;
 }
 
 .section-title {
@@ -43,3 +44,122 @@
     background-color: red;
 }
 
+/* Meeting History */
+
+.meeting-history-div {
+    height: 600px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;  
+}
+
+.meeting-history-div::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+.meeting-history {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-size: 1.3em;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    min-width: 100%;
+    overflow: scroll;
+    border-collapse: separate;
+    border-spacing: 0px 14px;
+    
+}
+
+.meeting-history tr {
+    height: 50px;
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    border-radius: 13px;
+}
+
+.meeting-history tbody {
+    height:auto;
+    overflow: scroll;
+
+}
+
+.meeting-data-time {
+    font-size: 0.7em;
+}
+
+.meeting-room-id {
+    font-size: 0.8em;
+}
+
+/* Upcoming Meetings */
+
+
+.upcoming-meetings-div {
+    height: 600px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;  
+}
+
+.upcoming-meetings-div::-webkit-scrollbar {
+    display: none;
+}
+
+.upcoming-meetings {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-size: 1.3em;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    min-width: 100%;
+    overflow: scroll;
+    border-collapse: separate;
+    border-spacing: 0px 14px;
+    
+}
+
+.upcoming-meetings tr {
+    height: 50px;
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    border-radius: 13px;
+}
+
+.upcoming-meetings tbody {
+    height:auto;
+    overflow: scroll;
+
+}
+
+.meeting-data-time {
+    font-size: 0.7em;
+}
+
+.upcoming-meetings button::before {
+    background-color: green;
+}
+
+.upcoming-meetings button:disabled::before {
+    background-color: gray;
+}
+
+/* Schedule Dashboard */
+
+.no-schedule {
+    margin-left: 10px;
+    font-style: italic;
+    font-size: 1.3em;
+    color: rgba(104, 104, 104, 0.36)
+}
+
+.schedule {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.schedule-room {
+    font-size: 1.2em;
+    width: 100px;
+}
