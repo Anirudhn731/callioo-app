@@ -13,7 +13,7 @@ function MeetingDashboard() {
 
         if (res !== null && typeof res !== "undefined") {
             const data = await res.text();
-            console.log("data :- ", data);
+            // console.log("data :- ", data);
             if (data === null || data === "") {
                 fetch(`${import.meta.env.VITE_BACKEND_URL}api/meetings/deleteMeeting?meetingRoomId=${meetingRoomId}`, {
                     method: "DELETE"

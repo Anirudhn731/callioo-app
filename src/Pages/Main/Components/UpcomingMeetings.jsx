@@ -17,7 +17,7 @@ function UpcomingMeetings({ schedules }) {
             body: JSON.stringify(startedAt)
         })
         const data = await res.text()
-        console.log("Join Meeting :- ", data);
+        // console.log("Join Meeting :- ", data);
         localStorage.setItem("meetingRoomId", meetingRoomId);
         localStorage.setItem("jwtToken", data);
         window.open("/meeting/" + meetingRoomId, "_blank");

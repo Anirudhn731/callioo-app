@@ -9,14 +9,14 @@ function ScheduleDashboard({ schedules, setSchedules, SetRetrievedSchedule }) {
             const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}api/meetings/getAllScheduleRooms`);
             const data = await res.json();
             setSchedules(data);
-            console.log(data);
+            // console.log(data);
         })()
     }, [])
 
     async function onEditSchedule(e, schedule) {
         const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}api/meetings/getSchedule?meetingRoomId=${schedule}`);
         const data = await res.json();
-        console.log("Data :- ", data);
+        // console.log("Data :- ", data);
         if (data !== null) {
             SetRetrievedSchedule(data);
         }

@@ -16,7 +16,7 @@ function ScheduleMeeting({ retrievedSchedule, SetRetrievedSchedule }) {
     }
 
     useEffect(() => {
-        console.log("Retrieved Schedule :- ", retrievedSchedule);
+        // console.log("Retrieved Schedule :- ", retrievedSchedule);
         fetch(`${import.meta.env.VITE_BACKEND_URL}api/getAll`)
             .then((res) => res.json())
             .then((data) => setUsers(data))
@@ -46,14 +46,13 @@ function ScheduleMeeting({ retrievedSchedule, SetRetrievedSchedule }) {
                 alert("Please enter a unique room Name");
                 return;
             }
-            console.log("Schedule :- ", retrievedSchedule);
-            console.log("URL :- " + `${import.meta.env.VITE_BACKEND_URL}api/meetings/saveSchedule?browserTZOffset=${(new Date()).getTimezoneOffset()}`);
+            // console.log("Schedule :- ", retrievedSchedule);
             await fetch(`${import.meta.env.VITE_BACKEND_URL}api/meetings/saveSchedule?browserTZOffset=${(new Date()).getTimezoneOffset()}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(retrievedSchedule)
             })
-            console.log("Saved Schedule :- ", retrievedSchedule);
+            // console.log("Saved Schedule :- ", retrievedSchedule);
             alert("Saved Schedule!");
             window.close();
         }

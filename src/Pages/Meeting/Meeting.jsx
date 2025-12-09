@@ -31,7 +31,7 @@ function Meeting() {
         }
     }
 
-    // Check key signature before decoding
+    // Check key signature before decoding -- TODO
     decodedtoken = jwtDecode(localStorage.getItem("jwtToken"));
     if (decodedtoken.room !== location.pathname.split("/").at(-1) &&
         decodedtoken.email !== localStorage.getItem("email")) {
@@ -110,8 +110,6 @@ function Meeting() {
                 }}
                 onApiReady={(api) => {
                     api.addListener("readyToClose", () => {
-                        console.log("Inside readToClose");
-                        console.log("Decoded token :- ", decodedtoken);
                         const res = (async () => {
                             await fetch(`${import.meta.env.VITE_BACKEND_URL}api/meetings/updateEndedAt?meetingRoomId=${localStorage.getItem("meetingRoomId")}`, {
                                 method: "PUT",
